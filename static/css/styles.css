@@ -1,0 +1,292 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    background-size: cover;
+}
+header{
+    background-color: black;
+    height: 3.5em;
+  }
+
+  .logo h4{
+    margin:0;
+    font-weight: bold;
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
+    margin-left: 9%;
+    padding-top: 1px;
+    
+   }
+
+  .head-tag{
+    float:right;
+    margin-top: 0px;
+    margin-right: 50px;
+  }
+  .login-in p{
+    color:green;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+  .login-in{
+    margin-left: 6%;
+    margin-top:10px;
+  }
+  .login-in button{
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .head-tag a{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color:white;
+   /* border: 1px solid black;*/
+    padding:8px;
+    margin-right: 8px;
+    font-weight: bold;
+
+    
+  }
+  
+  .head-tag a:hover{
+    color: red;
+    transition: 0.5s ease-in-out;
+    text-decoration: underline;
+    background-color: aquamarine;
+  }
+
+/*main welcome */
+.heading-sentence{
+  font-weight: bold;
+  margin-left: 6%;
+
+}
+ 
+  .heading-sentence h1{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .heading-sentence p{
+    font-size: 12px;
+    color:lightslategray;
+    margin-top: 5px;
+    
+  }
+
+
+  /*search*/
+
+  .search-recipes {
+  margin-top: 20px;;
+  margin-left: 6%;
+  text-align: center;
+}
+
+.search-recipes h2 {
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.search-recipes input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-recipes button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.con-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.con-col {
+  flex: 1;
+}
+
+.container h1 {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container p {
+  margin: 0;
+  text-align: right;
+  color:blue;
+  font-weight: bold;
+}
+
+.container a {
+  color: blue;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.container:hover a {
+  text-decoration: underline;
+}
+
+
+
+
+/*--cattegories*/
+.categories p{
+  float: right;
+}
+.col-md-3{
+  float: left;
+  font-style: italic;
+  
+}
+.categories {
+  padding: 20px; /* Add padding around the container */
+}
+
+
+.image_gallary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute columns evenly */
+}
+
+.image_gallary .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image_gallary .col-md-3 {
+  flex: 0 0 calc(25% - 10px); /* Each column takes up 25% of the container width minus padding */
+  margin: 0 5px; /* Add margin between columns */
+}
+
+.image_gallary .image {
+  text-align: center; /* Center the image horizontally */
+}
+
+.image_gallary .image img {
+  max-width: 100%; /* Ensure image doesn't exceed column width */
+  height: 70%; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below image */
+  transition: transform .1s;
+ 
+}
+.image_gallary .image:hover img {
+  transform: scale(.5);
+  cursor: pointer;
+}
+
+
+.recipe-name  {
+  
+    margin-top: 15px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+   
+  
+}
+.recipe-name h2{
+  margin-left: 6%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.recipe-name table{
+  margin-top: 10px;
+  margin-left: 32%;
+}
+
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    width:40%;
+    
+}
+
+th {
+    background-color:lightcyan;
+    font-style: italic;
+    font-weight: bold;
+    font-size:28px;
+    
+}
+th:hover {
+  background-color: lightgoldenrodyellow
+  
+}
+
+tr{
+ background-color:azure;
+ font-size: 23px;
+ font-weight: bold;
+ 
+}
+tr:hover {
+    background-color:lightpink;
+}
+
+
+
+footer{
+    background-color:gainsboro;
+    color: white;
+    
+   
+   
+  }
+  footer h3{
+    text-align: center;
+  }
+  /* Recipe Detail*/
+.recipe-page{
+  margin-left: 4%;
+  margin-top: 15px;
+  margin-right: 4%;
+
+}
+.comment{
+  margin-left: 4%;
+}
+.comment [type="submit"]{
+  
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+ 
+  
+  
+ 
+  
+  
+  
+
+  

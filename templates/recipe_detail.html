@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ recipe.name }}</title>
+    <link rel="stylesheet" href="..//static/css/styles.css">
+</head>
+<body background="..//static/images/logo1.JPG">
+    <header>
+        <div class="logo">
+            <h4>Achuzz RecipeHub</h4>
+            <img src="..//static/images/logo.png" alt="logo"  style="height: 35px; margin-left: 12%;">
+            <div class="head-tag">
+            <a href="/">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="login-in">
+        {% if session.get('user_id') %}
+        <p>Welcome, {{ username }}!</p><br>
+        <a href="/new_recipe"><button>Create a New Recipe</button></a>
+        <a href="/logout"><button>Logout</button></a>
+        {% endif %}
+    </div>
+    <div class="recipe-page">
+        <h1>{{ recipe.name }}</h1><br>
+        <p><strong>Ingredients: <br></strong> {{ recipe.ingredients }}</p><br>
+        <p><strong>Instructions: <br></strong> {{ recipe.instructions }}</p><br>
+        <p><strong>Cooking Time: <br></strong> {{ recipe.cooking_time }} minutes</p><br>
+        <p><strong>Serving Size: <br></strong> {{ recipe.serving_size }}</p><br>
+    </div>
+    <div class="comment">
+        <h2>Comments</h2><br>
+        <ul>
+            {% for comment, date_posted, username in comments %}
+                <li>
+                    <p><strong>{{ username }}:</strong> {{ comment }}</p>
+                    <p><em>Posted on {{ date_posted }}</em></p><br>
+                </li>
+            {% endfor %}
+        </ul>
+        {% if username %}
+        <form action="" method="post">
+            <textarea name="comment" rows="4" cols="50" placeholder=" Add your comment here..." required></textarea><br>
+            <input type="submit" value="Post Comment">
+        </form>
+        {% endif %}
+    </div>
+    
+</body>
+</html>

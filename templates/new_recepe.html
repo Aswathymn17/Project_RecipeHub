@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Recipe</title>
+    <link rel="stylesheet" href="../static/css/new_recipe.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body background="..//static/images/BackgroundImage.jpg">
+    <header>
+        <div class="logo">
+            <h4>Achuzz RecipeHub</h4>
+            <img src="..//static/images/logo.png" alt="logo"  style="height: 35px; margin-left: 12%;">
+            <div class="head-tag">
+                <a href="/">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="new-recipe">
+        <h1 style="text-align: center;">Create a New Recipe</h1><br>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form action="/create_recipe" method="POST">
+            <div>
+                <label for="recipe_name">Recipe Name:</label>
+                <input type="text" id="recipe_name" name="recipe_name" value="{{ recipe_name }}" style="margin-left:16% ;">
+                {% if errorrecipe_name %}
+                    <p style="color: red;">{{ errorrecipe_name }}</p>
+                {% endif %}
+            </div>
+            <div>
+                <label for="ingredients">Ingredients:</label>
+                <textarea id="ingredients" name="ingredients" style="margin-left: 19%;">{{ ingredients }} </textarea>
+                {% if erroringredients %}
+                    <p style="color: red;">{{ erroringredients }}</p>
+                {% endif %}
+            </div>
+            <div>
+                <label for="instructions">Instructions:</label>
+                <textarea id="instructions" name="instructions" style="margin-left: 18%;">{{ instructions }}</textarea>
+                {% if errorinstructions %}
+                    <p style="color: red;">{{ errorinstructions }}</p>
+                {% endif %}
+            </div>
+            <div>
+                <label for="cooking_time">Cooking Time (minutes):</label>
+                <input type="number" id="cooking_time" name="cooking_time" value="{{ cooking_time }}">
+                {% if errorcookingtime %}
+                    <p style="color: red;">{{ errorcookingtime }}</p>
+                {% endif %}
+            </div>
+            <div>
+                <label for="serving_size">Serving Size:</label>
+                <input type="text" id="serving_size" name="serving_size" value="{{ serving_size }}" style="margin-left: 17.5%;">
+                {% if errorserving %}
+                    <p style="color: red;">{{ errorserving }}</p>
+                {% endif %}
+            </div>
+            <button type="submit">Create Recipe</button>
+        </form>
+    </div>
+      
+</body>
+</html>

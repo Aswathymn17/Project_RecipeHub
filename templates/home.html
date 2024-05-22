@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeHuB Home Page</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body background="..//static/images/Background_body.jpg">
+    <header>
+        <div class="logo">
+            <h4>Achuzz RecipeHub</h4>
+            <img src="..//static/images/logo.png" alt="logo"  style="height: 35px; margin-left: 12%;">
+            <div class="head-tag">
+            <a href="/">Home</a>
+            <a href="#recipes-name">Recipe Details</a>
+            <!-- Recipe Creation Button -->
+             <!-- Recipe Creation Button -->
+            </div>
+        </div>
+    </header>
+    <div class="login-in">
+        {% if session.get('user_id') %}
+        <p>Welcome, {{ username }}!</p>
+        <a href="/logout"><button>Logout</button></a>
+        {% else %}
+        <a href="/login"><button>Login</button></a>
+        {% endif %}
+    </div>
+    <!--Search -->
+    <div class="heading-sentence">
+        <h1 style="margin-top: 20px">Effortless recipes</h1>
+        <h1>for every event</h1>
+        <p>Savor the Flavor: Explore, Share, and Create with RecipeHub</p>
+    </div>
+    
+
+    <div class="search-recipes">
+        <h2>Search Recipes</h2>
+        <!-- Search form -->
+        <form action="/search" method="GET">
+            <input type="text" name="query" placeholder="Search by name or ingredients">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+    <!--Search end-->
+     <!--Recipe Name-->
+     <div class="recipe-name" id="recipes-name">
+        <h2>Uncover our tasty recipes!</h2>
+        <table border="1px">
+            <thead>
+                <tr>
+                    <th>Recipes name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for recipe in sqldata %}
+                <tr>
+                    <td>
+                        <a href="/recipe/{{ recipe[0] }}">{{ recipe[1] }}</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+   
+
+    <!--Categories   -->
+        <!--Categories-->
+    <div class="container">
+        <div class="con-row">
+            <div class="con-col">
+                <h1 style="margin-left: 6%">What's new on our Categories</h1>
+            </div>
+            <div class="con-col">
+                <p> Do you want to see recipes?  <a href="#recipes-name">choose any recipe name!</a></p>
+            </div>
+        </div>
+    </div>
+        
+    <div class="categories">
+        <div class="image_gallary">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="image"> <img src="..//static/images/puttu.jpeg">
+                    <h4>BREAKFAST - PUTTU</h4>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="image"> <img src="..//static/images/biiyani.jpeg">
+                    <h4>LUNCH - Biriyani</h4>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="image"> <img src="..//static/images/Ramen.jpeg"> 
+                    <h4>DiNNER - RAMEN</h4>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="image"> <img src="..//static/images/cake.jpeg">
+                    <h4>DESSERTS - CAKE</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    
+				
+    
+    <!--Categories end  -->
+   
+    <footer>
+        <h3>Copyright@2024</h3>
+    </footer>
+   
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="..//static/css/styles.css">
+    <link rel="stylesheet" href="..//static/css/login.css">
+</head>
+<body background="..//static/images/logo3.JPG">
+    <header>
+        <div class="logo">
+            <h4>Achuzz RecipeHub</h4>
+            <img src="..//static/images/logo.png" alt="logo"  style="height: 35px; margin-left: 12%;">
+            <div class="head-tag">
+            <a href="/">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="login-page">
+        <h1 style="text-align: center;">Login</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+        <form action="/login" method="POST"><br>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/register">Register here</a></p>
+    <!--<a href="/"><button>Home</button></a>-->
+
+    </div>
+    
+ 
+</body>
+</html>

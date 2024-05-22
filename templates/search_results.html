@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" href="..//static/css/styles.css">
+    <link rel="stylesheet" href="..//static/css/new_recipe.css">
+</head>
+<body background="..//static/images/Capture.JPG">
+    <header >
+        <div class="logo">
+            <h4>Achuzz RecipeHub</h4>
+            <img src="..//static/images/logo.png" alt="logo"  style="height: 35px; margin-left: 12%;">
+            <div class="head-tag">
+            <a href="/">Home</a>
+            </div>
+        </div>
+    </header>
+    <div class="search">
+        <h2>Search Result for "{{query}}" </h2><br>
+        {% if results %}
+            <ul>
+                {% for recipe in results %}
+                    <li>
+                        <a href="/recipe/{{ recipe[0] }}">{{ recipe[1] }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No recipes found for "{{ query }}".</p>
+        {% endif %}
+    </div>
+   
+</body>
+</html>
